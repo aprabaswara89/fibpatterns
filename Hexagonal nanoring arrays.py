@@ -2,7 +2,8 @@
 """
 Created on Mon May 10 10:41:30 2021
 
-Create a hexagonal array of nanorings, with specified outer radius, wall thickness, and pitch
+Create a hexagonal array of nanorings, with specified outer radius,
+ wall thickness, and pitch
 
 @author: adipr48
 """
@@ -12,10 +13,10 @@ import numpy as np
 
 #array parameter
 ## Only edit between these lines ##
-r2 = 1000           # Outer radius
+r2 = 500           # Outer radius
 thickness = 100     # Ring thickness
 a = 3000            # pitch
-i = 4               # number of instances, even number
+i = 8               # number of instances, even number
 
 
 ## Only edit between these lines ##
@@ -64,4 +65,7 @@ options = pya.SaveLayoutOptions()
 options.format = "DXF"
 options.dxf_polygon_mode = 3
 
-layout.write("Rings Radius " + str(r2)+ " thickness " + str(thickness) + ".dxf",options)
+file_output = "Rings Radius " + str(r2)+ " thickness " + str(thickness) + ".dxf"
+
+layout.write(file_output,options)
+print("File saved as " + file_output)
